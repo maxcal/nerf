@@ -22,8 +22,8 @@
   </div>
 
   <fieldset>
-      <legend>Players</legend>
-      <%= form.fields_for :players do |pf| %>
+      <legend>Create a new player</legend>
+      <%= form.fields_for :players, tournament.players.select(&:new_record?) do |pf| %>
       <div class="player">
         <div class="field">
           <%= pf.label :name %>
