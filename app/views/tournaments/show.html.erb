@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tournament.name %>
+  <% if @tournament.players.any? %>
+  <h3>Players</h3>
+  <ul>
+    <% @tournament.players.each do |p| %>
+    <li><%= p.name %></li>
+    <% end %>
+  </ul>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_tournament_path(@tournament) %> |
+<%= link_to 'Back', tournaments_path %>
